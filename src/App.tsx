@@ -1,25 +1,36 @@
-import React from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React, { useState } from "react";
+import ListPeople from "./components/ListPeople";
+import AddPeople from "./components/AddPeople";
+
+export interface People {
+  name: string;
+  age: number;
+  married: boolean;
+  gender: string;
+}
 
 function App() {
+  const [name, setName] = useState<string>("Truong");
+  const [people, setPeople] = useState<People[]>([
+    {
+      name: "Truong",
+      age: 24,
+      married: true,
+      gender: "male",
+    },
+  ]);
+
+  const changeName = (newName: string) => {
+    setName(newName);
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.tsx</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className=''>{name}</div>{" "}
+      <button onClick={() => changeName("Minh NK")}>click me</button>
+      <ListPeople people={people} />
+      <AddPeople people={people} setPeople={setPeople} />
+    </>
   );
 }
 

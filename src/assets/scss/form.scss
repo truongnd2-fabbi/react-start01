@@ -1,0 +1,41 @@
+form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  padding: 20px;
+  * {
+    margin-bottom: 12px;
+  }
+  input,
+  textarea {
+    padding: 10px 15px;
+    background-color: #f8f8f8;
+    font-family: inherit;
+    font-size: 14px;
+    resize: none;
+
+    &:focus {
+      box-shadow: none;
+    }
+  }
+
+  label {
+    input {
+      margin-right: 5px;
+    }
+  }
+
+  button {
+    padding: 10px;
+    background-color: #3498db;
+    color: #fff;
+  }
+
+  input,
+  textarea,
+  button {
+    border-radius: 30px;
+    border: 2px solid #eee;
+    outline: none;
+  }
+}
